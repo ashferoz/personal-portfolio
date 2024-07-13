@@ -27,7 +27,7 @@ function App() {
   return (
     <div className="app" id="app" ref={appRef}>
       <div className="header">
-        <h2>Hi. I am Ash Feroz.</h2>
+        <h1>welcome</h1>
       </div>
     </div>
   );
