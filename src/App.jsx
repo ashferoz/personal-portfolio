@@ -1,9 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import Styles from "./components/background.module.css";
+import styles from "./components/background.module.css";
 
 function App() {
   const appRef = useRef(null);
-  const toRef = useRef(null);
 
   useEffect(() => {
     const moveGradient = (event) => {
@@ -25,9 +24,12 @@ function App() {
     };
   }, [appRef]);
   return (
-    <div className="app" id="app" ref={appRef}>
-      <div className="header">
-        <h1>welcome</h1>
+    <div className={styles.app} id="app" ref={appRef}>
+      <div className="font-proxima font-thin flex justify-center items-center h-screen p-10 text-white">
+        <div className="flex flex-col items-center">
+          <h1 className="text-5xl p-2">Ash Feroz</h1>
+          <h2>Motion Designer & Software Engineer</h2>
+        </div>
       </div>
     </div>
   );
