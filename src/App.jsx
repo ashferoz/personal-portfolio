@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./components/background.module.css";
+import Navbar from "./components/Navbar";
 
 function App() {
   const appRef = useRef(null);
@@ -25,6 +26,7 @@ function App() {
   }, [appRef]);
   return (
     <div className={styles.app} id="app" ref={appRef}>
+      <Navbar />
       <div className="font-proxima font-thin flex justify-center items-center h-screen p-10 text-white">
         <div className="flex flex-col items-center">
           <h1 className="text-5xl p-2">Ash Feroz</h1>
