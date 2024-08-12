@@ -1,39 +1,40 @@
-import React, { useEffect, useRef } from "react";
-import styles from "./components/background.module.css";
+import React, { Suspense } from "react";
 import Navbar from "./components/Navbar";
+import { Route, Routes, Navigate, useLocation } from "react-router-dom";
+import { CSSTransition, TransitionGroup } from "react-transition-group";
+import Main from "./pages/Main";
+import About from "./pages/About";
+import styles from './components/app.module.css';
 
 function App() {
-  const appRef = useRef(null);
+  const location = useLocation();
 
-  useEffect(() => {
-    const moveGradient = (event) => {
-      const winWidth = window.innerWidth;
-      const winHeight = window.innerHeight;
-
-      const mouseX = Math.round((event.pageX / winWidth) * 100);
-      const mouseY = Math.round((event.pageY / winHeight) * 100);
-
-      if (appRef) {
-        appRef.current.style.setProperty("--mouse-x", mouseX.toString() + "%");
-        appRef.current.style.setProperty("--mouse-y", mouseY.toString() + "%");
-      }
-    };
-    document.addEventListener("mousemove", moveGradient);
-
-    return function cleanup() {
-      document.removeEventListener("mousemove", moveGradient);
-    };
-  }, [appRef]);
   return (
-    <div className={styles.app} id="app" ref={appRef}>
+    <>
       <Navbar />
-      <div className="font-proxima font-thin flex justify-center items-center h-screen p-10 text-white">
-        <div className="flex flex-col items-center">
-          <h1 className="text-5xl p-2">Ash Feroz</h1>
-          <h2>Motion Designer & Software Engineer</h2>
-        </div>
-      </div>
-    </div>
+      <TransitionGroup>
+        <CSSTransition
+          key={location.key}
+          classNames={{
+            enter: styles.fadeEnter,
+            enterActive: styles.fadeEnterActive,
+            exit: styles.fadeExit,
+            exitActive: styles.fadeExitActive,
+          }}
+          timeout={1000}
+        >
+          <div className={styles.transitionWrapper}>
+            <Suspense fallback={<p className="text-5xl font-thin">Loading...</p>}>
+              <Routes location={location}>
+                <Route path="/" element={<Navigate replace to="/main" />} />
+                <Route path="/main" element={<Main />} />
+                <Route path="/about" element={<About />} />
+              </Routes>
+            </Suspense>
+          </div>
+        </CSSTransition>
+      </TransitionGroup>
+    </>
   );
 }
 

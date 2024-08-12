@@ -2,7 +2,7 @@
     background: radial-gradient(
         closest-side,
         rgb(0, 0, 0),
-        rgba(53, 53, 53, 0.209)
+        rgba(54, 54, 54, 0.209)
       ),
       radial-gradient(
         at var(--mouse-x) var(--mouse-y),

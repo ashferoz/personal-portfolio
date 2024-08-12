@@ -1,0 +1,25 @@
+.fadeEnter {
+  opacity: 0;
+  /* transform: scale(0.95); */
+}
+
+.fadeEnterActive {
+  opacity: 1;
+  /* transform: scale(1); */
+  transition: opacity 1000ms, transform 1000ms;
+}
+
+.fadeExit {
+  opacity: 1;
+  /* transform: scale(1); */
+}
+
+.fadeExitActive {
+  opacity: 0;
+  /* transform: scale(0.95); */
+  transition: opacity 1000ms, transform 1000ms;
+}
+
+.transitionWrapper {
+  position: relative; 
+}
