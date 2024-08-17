@@ -8,6 +8,7 @@ export default {
     extend: {
       fontFamily: {
         proxima: ["proxima-nova", "sans-serif"],
+        ivy: ["ivypresto-display", "serif"],
       }
     },
   },

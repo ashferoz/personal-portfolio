@@ -5,19 +5,19 @@ import styles from "../components/about.module.css";
 const About = () => {
   return (
     <>
-      <div className={`bg-black text-white`}>
+      <div className={`bg-[#000000] text-white`}>
         <div className={styles.content}>
-          <h1 className="text-8xl font-extrabold mb-16 text-center">
+          <h1 className="text-8xl font-ivy italic font-light mb-16 text-center">
             I'm Ash.
           </h1>
           <div className="flex pb-20">
             <img src={profileImage} alt="Profile" className={styles.img} />
             <div>
-              <h2 className="text-4xl mb-10">
-                A <span className="italic text-[#ecff58]">Motion Designer</span>{" "}
+              <h2 className="text-4xl mb-10 font-thin leading-snug">
+                A <span className="bg-[#efdd3b] text-black px-1">Motion Designer</span>{" "}
                 and
                 <br />
-                <span className="italic text-[#79ff6d]">
+                <span className="bg-[#efdd3b] text-black px-1">
                   Software Engineer
                 </span>{" "}
                 based in Singapore.
@@ -39,28 +39,17 @@ const About = () => {
             </div>
           </div>
           <div className="pb-10 flex flex-col text-center">
-            <h4 className="text-6xl font-extrabold mb-10">
-              People first, business second.
+            <h4 className="text-5xl font-medium font-ivy italic mb-10">
+            Driven by Impact,<br />Powered by Creativity
             </h4>
-            <p className="px-24 mb-5 text-xl font-thin">
-              I believe in making a positive impact on the world no matter how
-              big or small. For me, it's about collaborating with those who use
-              creativity to foster meaningful connections and drive change.
+            <p className="mb-5 text-xl font-thin">
+            My focus is on making a positive impact, collaborating with those who <br />share a vision of fostering change while achieving business goals.
             </p>
             <h5 className="text-xl italic">If this resonates with you, let's connect!</h5>
           </div>
         </div>
       </div>
-
-      <div className={styles.background}></div>
-
-      <svg style={{ display: "none" }}>
-        <defs>
-          <filter id="grain">
-            <feTurbulence type="turbulence" baseFrequency="9" />
-          </filter>
-        </defs>
-      </svg>
+      <div className={styles.noise}></div>
     </>
   );
 };
