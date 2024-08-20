@@ -5,6 +5,8 @@ import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Main from "./pages/Main";
 import About from "./pages/About";
 import styles from './components/app.module.css';
+import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 function App() {
   const location = useLocation();
@@ -29,6 +31,8 @@ function App() {
                 <Route path="/" element={<Navigate replace to="/main" />} />
                 <Route path="/main" element={<Main />} />
                 <Route path="/about" element={<About />} />
+                <Route path="/projects" element={<Projects />} />
+                <Route path="/contact" element={<Contact />} />
               </Routes>
             </Suspense>
           </div>

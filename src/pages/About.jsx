@@ -1,8 +1,10 @@
 import React from "react";
 import profileImage from "../images/profile.jpg";
 import styles from "../components/about.module.css";
+import { useNavigate } from "react-router-dom";
 
 const About = () => {
+  const navigate = useNavigate();
   return (
     <>
       <div className={`bg-[#000000] text-white`}>
@@ -14,7 +16,10 @@ const About = () => {
             <img src={profileImage} alt="Profile" className={styles.img} />
             <div>
               <h2 className="text-4xl mb-10 font-thin leading-snug">
-                A <span className="bg-[#efdd3b] text-black px-1">Motion Designer</span>{" "}
+                A{" "}
+                <span className="bg-[#efdd3b] text-black px-1">
+                  Motion Designer
+                </span>{" "}
                 and
                 <br />
                 <span className="bg-[#efdd3b] text-black px-1">
@@ -22,11 +27,15 @@ const About = () => {
                 </span>{" "}
                 based in Singapore.
               </h2>
-              <h3 className="text-xl font-thin">
+              <p className="text-xl font-thin">
                 Over the past 6 years, I've worn many hats in various areas of
                 digital design, including front-end development, motion
-                graphics, video editing, and videography.
-              </h3>
+                graphics, video editing, and videography. I've worked with
+                agencies such as: <span className="font-medium">Hogarth</span>,{" "}
+                <span className="font-medium">Big3Media</span>,{" "}
+                <span className="font-medium">Protocol</span> for clients such
+                as Apple, Gojek, Google Asia, NEC Asia.
+              </p>
               <br />
               <br />
               <p className="text-xl font-thin">
@@ -38,14 +47,25 @@ const About = () => {
               </p>
             </div>
           </div>
-          <div className="pb-10 flex flex-col text-center">
-            <h4 className="text-5xl font-medium font-ivy italic mb-10">
-            Driven by Impact,<br />Powered by Creativity
+          <div className="pb-8 flex flex-col text-center">
+            <h4 className="text-5xl font-medium font-ivy italic mb-10 text-[#efdd3b]">
+              Driven by Impact,
+              <br />
+              Powered by Creativity
             </h4>
             <p className="mb-5 text-xl font-thin">
-            My focus is on making a positive impact, collaborating with those who <br />share a vision of fostering change while achieving business goals.
+              My focus is on making a positive impact, collaborating with those
+              who <br />
+              share a vision of fostering change while achieving business goals.
             </p>
-            <h5 className="text-xl italic">If this resonates with you, let's connect!</h5>
+          </div>
+          <div className="text-center">
+            <h5
+              onClick={() => navigate("/contact")}
+              className="text-xl italic hover:border-b-[1px] hover:border-[#efdd3b] border-b-[1px] border-transparent inline-block cursor-pointer"
+            >
+              If this resonates with you, let's connect!
+            </h5>
           </div>
         </div>
       </div>
