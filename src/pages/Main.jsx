@@ -5,6 +5,13 @@ const Main = () => {
   const appRef = useRef(null);
 
   useEffect(() => {
+    const setInitialGradient = () => {
+      if (appRef.current) {
+        appRef.current.style.setProperty("--mouse-x", "50%");
+        appRef.current.style.setProperty("--mouse-y", "50%");
+      }
+    };
+
     const moveGradient = (event) => {
       const winWidth = window.innerWidth;
       const winHeight = window.innerHeight;
@@ -12,17 +19,20 @@ const Main = () => {
       const mouseX = Math.round((event.pageX / winWidth) * 100);
       const mouseY = Math.round((event.pageY / winHeight) * 100);
 
-      if (appRef) {
+      if (appRef.current) {
         appRef.current.style.setProperty("--mouse-x", mouseX.toString() + "%");
         appRef.current.style.setProperty("--mouse-y", mouseY.toString() + "%");
       }
     };
+
+    setInitialGradient();
+
     document.addEventListener("mousemove", moveGradient);
 
     return function cleanup() {
       document.removeEventListener("mousemove", moveGradient);
     };
-  }, [appRef]);
+  }, []);
 
   return (
     <div className={styles.app} id="app" ref={appRef}>

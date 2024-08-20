@@ -1,12 +1,13 @@
-import React, { Suspense } from "react";
+import React from "react";
+import { Suspense } from "react";
 import Navbar from "./components/Navbar";
 import { Route, Routes, Navigate, useLocation } from "react-router-dom";
-import { CSSTransition, TransitionGroup } from "react-transition-group";
 import Main from "./pages/Main";
 import About from "./pages/About";
-import styles from './components/app.module.css';
 import Projects from "./pages/Projects";
 import Contact from "./pages/Contact";
+import { AnimatePresence, motion } from "framer-motion";
+import styles from "./components/app.module.css";
 
 function App() {
   const location = useLocation();
@@ -14,30 +15,73 @@ function App() {
   return (
     <>
       <Navbar />
-      <TransitionGroup>
-        <CSSTransition
-          key={location.key}
-          classNames={{
-            enter: styles.fadeEnter,
-            enterActive: styles.fadeEnterActive,
-            exit: styles.fadeExit,
-            exitActive: styles.fadeExitActive,
-          }}
-          timeout={1000}
-        >
-          <div className={styles.transitionWrapper}>
-            <Suspense fallback={<p className="text-5xl font-thin">Loading...</p>}>
-              <Routes location={location}>
-                <Route path="/" element={<Navigate replace to="/main" />} />
-                <Route path="/main" element={<Main />} />
-                <Route path="/about" element={<About />} />
-                <Route path="/projects" element={<Projects />} />
-                <Route path="/contact" element={<Contact />} />
-              </Routes>
-            </Suspense>
-          </div>
-        </CSSTransition>
-      </TransitionGroup>
+      <div className={styles.transitionWrapper}>
+        <Suspense fallback={<p className="text-5xl font-thin">Loading...</p>}>
+          <AnimatePresence
+            mode="wait" 
+          >
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Navigate replace to="/main" />} />
+              <Route
+                path="/main"
+                element={
+                  <motion.div
+                    key="main" 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }} 
+                  >
+                    <Main />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <motion.div
+                    key="about"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                  >
+                    <About />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/projects"
+                element={
+                  <motion.div
+                    key="projects" 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }} 
+                  >
+                    <Projects />
+                  </motion.div>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <motion.div
+                    key="contact" 
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }} 
+                  >
+                    <Contact />
+                  </motion.div>
+                }
+              />
+            </Routes>
+          </AnimatePresence>
+        </Suspense>
+      </div>
     </>
   );
 }
