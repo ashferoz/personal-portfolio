@@ -38,7 +38,7 @@ const Contact = () => {
               target="_blank"
               className="underline-hover text-s italic hover:text-[#efdd3b] cursor-pointer transition-colors duration-250 mt-4"
             >
-              Instagram
+              Playground
             </a>
             <a
               href="https://vimeo.com/ashferoz"
