@@ -1,27 +1,25 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { FiMenu, FiX } from "react-icons/fi"; // Import burger icon and close icon
-import styles from "../components/navbar.module.css";
+import styles from "../components/navbar.module.css"
 
 const Navbar = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
+    setIsOpen(!isOpen);
   };
 
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
         <div className={styles.burgerIcon} onClick={toggleMenu}>
-          {isMenuOpen ? <FiX /> : <FiMenu />}
+          &#9776; {/* Unicode character for burger icon */}
         </div>
-        <ul className={`${styles.menu} ${isMenuOpen ? styles.open : ""}`}>
+        <ul className={`${styles.menu} ${isOpen ? styles.open : ""}`}>
           <li>
             <NavLink
               to="/main"
-              className={({ isActive }) => (isActive ? `${styles.active}` : "")}
-              onClick={toggleMenu}
+              className={({ isActive }) => (isActive ? styles.active : "")}
             >
               main
             </NavLink>
@@ -29,8 +27,7 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/devProjects"
-              className={({ isActive }) => (isActive ? `${styles.active}` : "")}
-              onClick={toggleMenu}
+              className={({ isActive }) => (isActive ? styles.active : "")}
             >
               dev
             </NavLink>
@@ -38,8 +35,7 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/motionProjects"
-              className={({ isActive }) => (isActive ? `${styles.active}` : "")}
-              onClick={toggleMenu}
+              className={({ isActive }) => (isActive ? styles.active : "")}
             >
               motion
             </NavLink>
@@ -47,8 +43,7 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/about"
-              className={({ isActive }) => (isActive ? `${styles.active}` : "")}
-              onClick={toggleMenu}
+              className={({ isActive }) => (isActive ? styles.active : "")}
             >
               about
             </NavLink>
@@ -56,8 +51,7 @@ const Navbar = () => {
           <li>
             <NavLink
               to="/contact"
-              className={({ isActive }) => (isActive ? `${styles.active}` : "")}
-              onClick={toggleMenu}
+              className={({ isActive }) => (isActive ? styles.active : "")}
             >
               contact
             </NavLink>

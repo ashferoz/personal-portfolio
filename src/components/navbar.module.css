@@ -1,3 +1,4 @@
+/* Existing styles */
 .header {
     position: fixed;
     top: 4rem;
@@ -30,6 +31,23 @@
     cursor: pointer;
   }
   
+  /* Hover effect */
+  .menu a {
+    transition: all 0.5s ease;
+  }
+  
+  .menu a:hover {
+    color: #efdd3b;
+    letter-spacing: 0.1rem;
+  }
+  
+  /* Active link style */
+  .menu .active {
+    color: #efdd3b;
+    font-weight: 500;
+  }
+  
+  /* Responsive styles */
   @media (max-width: 700px) {
     .menu {
       display: none;
