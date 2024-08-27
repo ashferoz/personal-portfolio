@@ -16,34 +16,34 @@ const Contact = () => {
           </a>
         </div>
         <div>
-          <h3 className="font-ivy text-3xl">Social Media</h3>
+          <h3 className="font-ivy text-3xl">Links</h3>
           <hr />
-          <div>
+          <div className="flex flex-col w-20">
             <a
               href="https://github.com/ashferoz"
               target="_blank"
-              className="underline-hover text-s italic hover:text-[#efdd3b] block cursor-pointer transition-colors duration-250 mt-4"
+              className="underline-hover text-s italic hover:text-[#efdd3b] cursor-pointer transition-colors duration-250 mt-4"
             >
               Github
             </a>
             <a
               href="https://www.linkedin.com/in/ashferoz/"
               target="_blank"
-              className="underline-hover text-s italic hover:text-[#efdd3b] inline-block cursor-pointer transition-colors duration-250 mt-4"
+              className="underline-hover text-s italic hover:text-[#efdd3b] cursor-pointer transition-colors duration-250 mt-4"
             >
               Linkedin
             </a>
-            <a
+             <a
               href="https://www.instagram.com/ash.feroz/"
               target="_blank"
-              className="underline-hover text-s italic hover:text-[#efdd3b] block cursor-pointer transition-colors duration-250 mt-4"
+              className="underline-hover text-s italic hover:text-[#efdd3b] cursor-pointer transition-colors duration-250 mt-4"
             >
               Instagram
             </a>
             <a
               href="https://vimeo.com/ashferoz"
               target="_blank"
-              className="underline-hover text-s italic hover:text-[#efdd3b] block cursor-pointer transition-colors duration-250 mt-4"
+              className="underline-hover text-s italic hover:text-[#efdd3b] cursor-pointer transition-colors duration-250 mt-4"
             >
               Vimeo
             </a>

@@ -21,14 +21,27 @@ const Navbar = () => {
 
           <li>
             <NavLink
-              to="/projects"
+              to="/devProjects"
               className={({ isActive }) =>
                 isActive
                   ? "text-[#efdd3b] font-medium"
                   : "hover:tracking-widest hover:text-[#efdd3b] transition-all duration-500"
               }
             >
-              projects
+              dev
+            </NavLink>
+          </li>
+
+          <li>
+            <NavLink
+              to="/motionProjects"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-[#efdd3b] font-medium"
+                  : "hover:tracking-widest hover:text-[#efdd3b] transition-all duration-500"
+              }
+            >
+              motion
             </NavLink>
           </li>
 
