@@ -4,7 +4,7 @@ import showreel from "../images/showreel.gif";
 
 const MotionProjects = () => {
   return (
-    <div className={`bg-[#222222] text-white flex flex-col py-40 px-5 h-screen items-center`}>
+    <div className="bg-[#151515] text-white flex flex-col py-40 px-5 h-screen items-center">
       <div className="mb-8 text-center">
         <a
           href="https://vimeo.com/ashferoz"

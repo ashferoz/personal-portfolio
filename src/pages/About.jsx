@@ -7,7 +7,7 @@ const About = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className="bg-[#222222] text-white">
+      <div className="bg-[#151515] text-white">
         <div className="py-36 px-20">
           <h1 className="text-8xl font-ivy italic font-light mb-16 text-center">
             I'm Ash.
