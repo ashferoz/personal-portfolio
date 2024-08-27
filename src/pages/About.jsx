@@ -7,14 +7,14 @@ const About = () => {
   const navigate = useNavigate();
   return (
     <>
-      <div className={`bg-[#000000] text-white`}>
-        <div className={styles.content}>
+      <div className="bg-[#222222] text-white">
+        <div className="py-36 px-20">
           <h1 className="text-8xl font-ivy italic font-light mb-16 text-center">
             I'm Ash.
           </h1>
-          <div className="flex pb-20">
+          <div className={styles.container}>
             <img src={profileImage} alt="Profile" className={styles.img} />
-            <div>
+            <div className={styles.textContent}>
               <h2 className="text-4xl mb-10 font-thin leading-snug">
                 A{" "}
                 <span className="bg-[#efdd3b] text-black px-1">
@@ -70,7 +70,6 @@ const About = () => {
           </div>
         </div>
       </div>
-      <div className={styles.noise}></div>
     </>
   );
 };

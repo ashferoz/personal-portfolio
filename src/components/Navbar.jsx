@@ -1,71 +1,63 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { FiMenu, FiX } from "react-icons/fi"; // Import burger icon and close icon
+import styles from "../components/navbar.module.css";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
-    <header className="fixed top-16 left-1/2 transform -translate-x-1/2 w-auto px-8 py-2 bg-[#000000] bg-opacity-85 text-white font-proxima font-light rounded-lg z-20">
-      <nav className="flex justify-center">
-        <ul className="flex space-x-24">
+    <header className={styles.header}>
+      <nav className={styles.nav}>
+        <div className={styles.burgerIcon} onClick={toggleMenu}>
+          {isMenuOpen ? <FiX /> : <FiMenu />}
+        </div>
+        <ul className={`${styles.menu} ${isMenuOpen ? styles.open : ""}`}>
           <li>
             <NavLink
               to="/main"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#efdd3b] font-medium"
-                  : "hover:tracking-widest hover:text-[#efdd3b] transition-all duration-500"
-              }
+              className={({ isActive }) => (isActive ? `${styles.active}` : "")}
+              onClick={toggleMenu}
             >
               main
             </NavLink>
           </li>
-
           <li>
             <NavLink
               to="/devProjects"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#efdd3b] font-medium"
-                  : "hover:tracking-widest hover:text-[#efdd3b] transition-all duration-500"
-              }
+              className={({ isActive }) => (isActive ? `${styles.active}` : "")}
+              onClick={toggleMenu}
             >
               dev
             </NavLink>
           </li>
-
           <li>
             <NavLink
               to="/motionProjects"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#efdd3b] font-medium"
-                  : "hover:tracking-widest hover:text-[#efdd3b] transition-all duration-500"
-              }
+              className={({ isActive }) => (isActive ? `${styles.active}` : "")}
+              onClick={toggleMenu}
             >
               motion
             </NavLink>
           </li>
-
           <li>
             <NavLink
               to="/about"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#efdd3b] font-medium"
-                  : "hover:tracking-widest hover:text-[#efdd3b] transition-all duration-500"
-              }
+              className={({ isActive }) => (isActive ? `${styles.active}` : "")}
+              onClick={toggleMenu}
             >
               about
             </NavLink>
           </li>
-
           <li>
             <NavLink
               to="/contact"
-              className={({ isActive }) =>
-                isActive
-                  ? "text-[#efdd3b] font-medium"
-                  : "hover:tracking-widest hover:text-[#efdd3b] transition-all duration-500"
-              }
+              className={({ isActive }) => (isActive ? `${styles.active}` : "")}
+              onClick={toggleMenu}
             >
               contact
             </NavLink>
