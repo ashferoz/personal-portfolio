@@ -1,11 +1,54 @@
 import React from "react";
-import styles from '../components/contact.module.css'
+import styles from "../components/contact.module.css";
 
 const Contact = () => {
   return (
-    <div className={`bg-[#000000] text-white`}>
+    <div className={`bg-[#000000] text-white flex flex-col p-10`}>
       <div className={styles.content}>
-        <h1>hello</h1>
+        <div className="mb-8">
+          <h3 className="font-ivy text-3xl">Email</h3>
+          <hr />
+          <a
+            href="mailto:ash.safrina@gmail.com"
+            className="underline-hover text-xl italic hover:text-[#efdd3b] inline-block cursor-pointer transition-colors duration-250 mt-4"
+          >
+            ash.safrina@gmail.com
+          </a>
+        </div>
+        <div>
+          <h3 className="font-ivy text-3xl">Social Media</h3>
+          <hr />
+          <div>
+            <a
+              href="https://github.com/ashferoz"
+              target="_blank"
+              className="underline-hover text-s italic hover:text-[#efdd3b] block cursor-pointer transition-colors duration-250 mt-4"
+            >
+              Github
+            </a>
+            <a
+              href="https://www.linkedin.com/in/ashferoz/"
+              target="_blank"
+              className="underline-hover text-s italic hover:text-[#efdd3b] inline-block cursor-pointer transition-colors duration-250 mt-4"
+            >
+              Linkedin
+            </a>
+            <a
+              href="https://www.instagram.com/ash.feroz/"
+              target="_blank"
+              className="underline-hover text-s italic hover:text-[#efdd3b] block cursor-pointer transition-colors duration-250 mt-4"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://vimeo.com/ashferoz"
+              target="_blank"
+              className="underline-hover text-s italic hover:text-[#efdd3b] block cursor-pointer transition-colors duration-250 mt-4"
+            >
+              Vimeo
+            </a>
+          </div>
+        </div>
       </div>
       <div className={styles.noise}></div>
     </div>

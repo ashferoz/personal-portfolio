@@ -31,13 +31,14 @@ const About = () => {
                 Over the past 6 years, I've worn many hats in various areas of
                 digital design, including front-end development, motion
                 graphics, video editing, and videography. I've worked with
-                agencies such as: <span className="font-medium">Hogarth</span>,{" "}
+                agencies/clients such as: <span className="font-medium">Hogarth</span>,{" "}
                 <span className="font-medium">Big3Media</span>,{" "}
-                <span className="font-medium">Protocol</span> for clients such
-                as Apple, Gojek, Google Asia, NEC Asia.
+                <span className="font-medium">Protocol</span>,{" "}
+                <span className="font-medium">UnderwriteMe</span>,{" "}
+                <span className="font-medium">Physio & Sole Clinic</span>.
               </p>
               <br />
-              <br />
+              
               <p className="text-xl font-thin">
                 Growing up surrounded by arts in different mediums such as
                 music, games, and television, I've developed a keen eye for
@@ -59,10 +60,10 @@ const About = () => {
               share a vision of fostering change while achieving business goals.
             </p>
           </div>
-          <div className="text-center">
+          <div className="text-center mb-10">
             <h5
               onClick={() => navigate("/contact")}
-              className="text-xl italic hover:border-b-[1px] hover:border-[#efdd3b] border-b-[1px] border-transparent inline-block cursor-pointer"
+              className="text-xl italic hover:text-[#efdd3b] border-b-[1px] border-[#efdd3b] inline-block cursor-pointer transition-colors duration-250"
             >
               If this resonates with you, let's connect!
             </h5>

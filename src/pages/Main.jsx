@@ -38,9 +38,9 @@ const Main = () => {
     <div className={styles.app} id="app" ref={appRef}>
       <div className="font-proxima flex justify-center items-center h-screen p-10 text-white">
         <div className="flex flex-col items-center">
-          <h1 className="text-5xl font-ivy font-light italic p-2">Ash Feroz</h1>
+          <h1 className="text-5xl font-ivy font-light italic p-2">Hey, I'm Ash Feroz.</h1>
           <h2 className="font-light tracking-wide">
-            Motion Designer & Software Engineer
+            A Motion Designer & Software Engineer.
           </h2>
         </div>
       </div>
