@@ -10,7 +10,7 @@ import Tags from "../components/Tags";
 const DevProjects = () => {
   return (
     <>
-      <div className="bg-[#151515] text-white font-proxima flex flex-col justify-center items-center h-auto pt-40 px-10">
+      <div className="bg-[#151515] text-white font-proxima flex flex-col justify-center items-center h-auto pt-40 px-10 max-md:px-5">
         <div className={styles.projectContainer}>
           <div className="h-full w-full">
             <div className={styles.imageContainer}>

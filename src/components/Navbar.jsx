@@ -1,21 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { NavLink } from "react-router-dom";
 import styles from "../components/navbar.module.css"
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
   return (
     <header className={styles.header}>
       <nav className={styles.nav}>
-        <div className={styles.burgerIcon} onClick={toggleMenu}>
-          &#9776; {/* Unicode character for burger icon */}
-        </div>
-        <ul className={`${styles.menu} ${isOpen ? styles.open : ""}`}>
+      
+        <ul className={styles.menu}>
           <li>
             <NavLink
               to="/main"
